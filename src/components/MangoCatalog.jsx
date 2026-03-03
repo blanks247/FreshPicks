@@ -1,10 +1,18 @@
 import React from 'react';
 
 const mangoes = [
-    { id: 1, name: 'Alphonso', origin: 'Ratnagiri, India', type: 'Export Quality', desc: 'The king of mangoes, known for its rich, creamy texture and unique aroma.', color: '#FFB300' },
-    { id: 2, name: 'Kesar', origin: 'Gujarat, India', type: 'Premium Import', desc: 'Renowned for its bright orange pulp and intense sweetness.', color: '#FFD54F' },
-    { id: 3, name: 'Banganapalli', origin: 'Andhra Pradesh, India', type: 'Domestic/Export', desc: 'Large sized mango with a very sweet taste and thin skin.', color: '#FFF176' },
-    { id: 4, name: 'Langra', origin: 'Varanasi, India', type: 'Export Special', desc: 'Medium-sized mango with a greenish-yellow skin and sweet fiberless pulp.', color: '#DCE775' },
+    { id: 1, name: 'Banginapalli', origin: 'Andhra Pradesh', type: 'Premium Export', desc: 'The pride of Andhra Pradesh, known for its sweet, fiberless pulp and rich aroma.', color: '#FFC107' },
+    { id: 2, name: 'Kallector', origin: 'South India', type: 'Domestic Special', desc: 'Distinctive parrot-beak shape, offering a unique tangy-sweet flavor perfect for juices.', color: '#FFCA28' },
+    { id: 3, name: 'Suvarna-rekha', origin: 'Andhra Pradesh', type: 'Export Quality', desc: 'Identified by its beautiful red blush, with soft, fiberless, and very juicy flesh.', color: '#FF8F00' },
+    { id: 4, name: 'Pariya', origin: 'Gujarat/Maharashtra', type: 'Premium Hybrid', desc: 'A premium hybrid of Alphonso and Baneshan, exceptionally sweet and fiberless.', color: '#FFB300' },
+    { id: 5, name: 'Kothapalli kobbarantu', origin: 'East Godavari', type: 'Traditional Variety', desc: 'Named for its coconut-like aroma, this variety offers a firm, meaty texture.', color: '#FDD835' },
+    { id: 6, name: 'Muntha maamidi', origin: 'Andhra Pradesh', type: 'Popular Domestic', desc: 'A traditional favorite, valued for its classic sweet taste and versatility.', color: '#FBC02D' },
+    { id: 7, name: 'Panukulu', origin: 'Coastal Andhra', type: 'Early Season', desc: 'An early-season delicacy with a sweet, fiber-free meaty texture.', color: '#C0CA33' },
+    { id: 8, name: 'Cherukurasalu', origin: 'Nuzvid', type: 'Honey Sweet', desc: 'The "Sugarcane" mango, famous for its intense, honey-like sweetness and juiciness.', color: '#4CAF50' },
+    { id: 9, name: 'Panchadara kalasa', origin: 'Andhra Pradesh', type: 'Sugar Pot', desc: 'The "Sugar Pot" of mangoes, known for its melting texture and pot-like shape.', color: '#FFA000' },
+    { id: 10, name: 'Pedda rasalu', origin: 'South India', type: 'Juicing Specialty', desc: 'Large, juicy mangoes perfect for preparing fresh, aromatic mango pulp.', color: '#FFD600' },
+    { id: 11, name: 'Thotapalli mamidi', origin: 'South India', type: 'High Yield', desc: 'Highly productive variety known for its sweet, juicy fruits and consistent quality.', color: '#FFEE58' },
+    { id: 12, name: 'Vimanam prasadam', origin: 'Rare/Andhra', type: 'Divine Choice', desc: 'A rare and prized variety, often considered a divine gift for mango lovers.', color: '#FF6F00' },
 ];
 
 const MangoCatalog = () => {

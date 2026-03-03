@@ -7,17 +7,17 @@ const Hero = () => {
             <div className="hero-overlay"></div>
             <div className="container hero-container animate-fade">
                 <div className="hero-content">
-                    <span className="hero-badge">Premium Import & Export</span>
-                    <h1>Deliciously Fresh, <br /><span>Naturally Sweet</span></h1>
-                    <p>We source the finest mangoes from the world's best orchards, ensuring global standard quality delivered straight to your doorstep.</p>
+                    <span className="hero-badge">Hand-Picked with Love</span>
+                    <h1>Straight from <span>Nature's Heart</span> to Your Home <span className="handwritten-accent">Fresh!</span></h1>
+                    <p>Experience the warmth of traditional orchards. We bring you the world's most exquisite mangoes, hand-picked at peak ripeness for that perfect, homely taste.</p>
                     <div className="hero-btns">
-                        <a href="#products" className="btn btn-primary">Explore Varieties</a>
-                        <a href="#contact" className="btn btn-secondary">Order Now</a>
+                        <a href="#products" className="btn btn-primary">Discover the Harvest</a>
+                        <a href="#about" className="btn btn-secondary">Our Story</a>
                     </div>
                 </div>
-            </div>
-            <div className="hero-image-container">
-                <img src={heroImage} alt="Fresh Mangoes" className="hero-img" />
+                <div className="hero-image-container">
+                    <img src={heroImage} alt="Golden Mango Harvest" className="hero-img" />
+                </div>
             </div>
         </section>
     );

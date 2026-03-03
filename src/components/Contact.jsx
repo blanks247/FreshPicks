@@ -1,6 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { db } from '../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [status, setStatus] = useState({
+        submitting: false,
+        submitted: false,
+        error: null
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Check for placeholder config
+        if (db.app.options.apiKey === "YOUR_API_KEY") {
+            setStatus({
+                submitting: false,
+                submitted: false,
+                error: "Firebase is not configured. Please update src/firebase.js with your project credentials."
+            });
+            return;
+        }
+
+        setStatus({ submitting: true, submitted: false, error: null });
+
+        try {
+            // Add a timeout to prevent hanging
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error("Request timed out")), 10000)
+            );
+
+            const submissionPromise = addDoc(collection(db, 'enquiries'), {
+                ...formData,
+                timestamp: serverTimestamp()
+            });
+
+            await Promise.race([submissionPromise, timeoutPromise]);
+
+            setStatus({ submitting: false, submitted: true, error: null });
+            setFormData({ name: '', email: '', message: '' });
+
+            setTimeout(() => {
+                setStatus(prev => ({ ...prev, submitted: false }));
+            }, 5000);
+        } catch (err) {
+            console.error("Error adding document: ", err);
+            let errorMessage = "Failed to send message. Please check your internet connection or try again.";
+
+            if (err.message === "Request timed out") {
+                errorMessage = "The request timed out. This often happens if Firebase is misconfigured or the database is unreachable.";
+            } else if (err.code === "permission-denied") {
+                errorMessage = "Submission blocked. Please ensure Firestore Security Rules allow writes to the 'enquiries' collection.";
+            }
+
+            setStatus({
+                submitting: false,
+                submitted: false,
+                error: errorMessage
+            });
+        }
+    };
+
     return (
         <footer id="contact" className="contact section-padding">
             <div className="container">
@@ -33,12 +106,52 @@ const Contact = () => {
 
                     <div className="contact-form-container">
                         <h3>Quick Enquiry</h3>
-                        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                            <input type="text" placeholder="Your Name" required />
-                            <input type="email" placeholder="Email Address" required />
-                            <textarea placeholder="Tell us what you're looking for..." rows="4" required></textarea>
-                            <button type="submit" className="btn btn-primary">Send Message</button>
-                        </form>
+                        {status.submitted ? (
+                            <div className="success-message">
+                                <h4>🎉 Thank you, {formData.name || 'friend'}!</h4>
+                                <p>Your message has been received. We'll get back to you shortly.</p>
+                            </div>
+                        ) : (
+                            <form className="contact-form" onSubmit={handleSubmit}>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email Address"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <textarea
+                                    name="message"
+                                    placeholder="Tell us what you're looking for..."
+                                    rows="4"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                ></textarea>
+                                {status.error && <p className="error-text">{status.error}</p>}
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    disabled={status.submitting}
+                                >
+                                    {status.submitting ? (
+                                        <>
+                                            <div className="button-loader"></div>
+                                            Sending...
+                                        </>
+                                    ) : 'Send Message'}
+                                </button>
+                            </form>
+                        )}
                     </div>
                 </div>
 
