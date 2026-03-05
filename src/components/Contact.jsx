@@ -50,6 +50,14 @@ const Contact = () => {
 
             await Promise.race([submissionPromise, timeoutPromise]);
 
+            // Construct WhatsApp URL
+            const whatsappNumber = "918309375076";
+            const whatsappMsg = `Hi Fresh Pick, I'm ${formData.name}.\n\nEnquiry Details:\nEmail: ${formData.email}\nMessage: ${formData.message}`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMsg)}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+
             setStatus({ submitting: false, submitted: true, error: null });
             setFormData({ name: '', email: '', message: '' });
 

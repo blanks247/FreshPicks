@@ -5,6 +5,7 @@ import About from './components/About';
 import MangoCatalog from './components/MangoCatalog';
 import Contact from './components/Contact';
 import Loader from './components/Loader';
+import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <MangoCatalog />
         <Contact />
       </main>
+      <ScrollToTop />
     </div>
   );
 }

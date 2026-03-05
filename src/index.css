@@ -363,6 +363,12 @@ ul {
   max-width: 550px;
 }
 
+.hero-btns {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
 .hero-image-container {
   position: relative;
   height: 600px;
@@ -468,7 +474,7 @@ ul {
 
   .hero-btns {
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
     width: 100%;
     max-width: 280px;
     margin: 0 auto;
@@ -696,13 +702,15 @@ ul {
   z-index: 2;
 }
 
-.mango-placeholder {
-  font-size: 6rem;
+.mango-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: var(--transition);
 }
 
-.product-card:hover .mango-placeholder {
-  transform: scale(1.1) rotate(5deg);
+.product-card:hover .mango-card-image {
+  transform: scale(1.1);
 }
 
 .product-info {
@@ -894,6 +902,7 @@ ul {
     gap: 4rem;
   }
 }
+
 /* Loaders */
 .landing-loader {
   position: fixed;
@@ -920,9 +929,17 @@ ul {
 }
 
 @keyframes pulseRotate {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.2) rotate(15deg); }
-  100% { transform: scale(1) rotate(0deg); }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(15deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 .loader-text h2 {
@@ -950,9 +967,18 @@ ul {
 }
 
 @keyframes loadingProgress {
-  0% { transform: scaleX(0); }
-  50% { transform: scaleX(1); }
-  100% { transform: scaleX(1); opacity: 0; }
+  0% {
+    transform: scaleX(0);
+  }
+
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
 }
 
 /* Button Spinner */
@@ -969,5 +995,50 @@ ul {
 }
 
 @keyframes btnSpinner {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scroll to Top FAB */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  border: 1px solid var(--glass-border);
+  font-size: 1.5rem;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--accent);
+  transform: translateY(-5px) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
 }
