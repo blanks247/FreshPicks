@@ -6,12 +6,28 @@
   <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>fruitpicks</title>
-  <script type="module" crossorigin src="/assets/index-dGM0SxNg.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DPGVwTvD.css">
+  <script type="module" crossorigin src="/assets/index-B8PrJmBl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CVO7AfVt.css">
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- Premium Background Filters -->
+  <svg style="display: none;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+      <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+    </defs>
+  </svg>
+
 </body>
 
 </html>
