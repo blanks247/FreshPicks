@@ -1,15 +1,15 @@
-import mango1 from '../assets/mangoes/mango_10.jpeg';
-import mango2 from '../assets/mangoes/mango_12.jpeg';
-import mango3 from '../assets/mangoes/mango_13.jpeg';
-import mango4 from '../assets/mangoes/mango_14.jpeg';
-import mango5 from '../assets/mangoes/mango_15.jpeg';
-import mango6 from '../assets/mangoes/mango_16.jpeg';
-import mango7 from '../assets/mangoes/mango_17.jpeg';
-import mango8 from '../assets/mangoes/mango_18.jpeg';
-import mango9 from '../assets/mangoes/mango_19.jpeg';
-import mango10 from '../assets/mangoes/mango_20.jpeg';
-import mango11 from '../assets/mangoes/mango_21.jpeg';
-import mango12 from '../assets/mangoes/mango_22.jpeg';
+import mango1 from '../assets/mangoes/mango_13.jpeg'; // Banginapalli (previously Suvarna-rekha image)
+import mango2 from '../assets/mangoes/mango_12.jpeg'; // Placeholder for Kallector (image moved to Cherukurasalu)
+import mango3 from '../assets/mangoes/mango_10.jpeg'; // Suvarna-rekha (previously Banginapalli image)
+import mango4 from '../assets/mangoes/mango_14.jpeg'; // Pariya (No change)
+import mango5 from '../assets/mangoes/mango_16.jpeg'; // Kothapalli kobbarantu (now Muntha maamidi image)
+import mango6 from '../assets/mangoes/mango_17.jpeg'; // Muntha maamidi (now Panukulu image)
+import mango7 from '../assets/mangoes/mango_18.jpeg'; // Panukulu (now Cherukurasalu image)
+import mango8 from '../assets/mangoes/mango_12.jpeg'; // Cherukurasalu (now Kallector image)
+import mango9 from '../assets/mangoes/mango_20.jpeg'; // Panchadara kalasa (now Pedda rasalu image)
+import mango10 from '../assets/mangoes/mango_21.jpeg'; // Pedda rasalu (now Thotapalli image)
+import mango11 from '../assets/mangoes/mango_22.jpeg'; // Thotapalli mamidi (now Vimanam prasadam image)
+import mango12 from '../assets/mangoes/mango_19.jpeg'; // Vimanam prasadam (now Panchadara kalasa image)
 
 const mangoes = [
     { id: 1, name: 'Banginapalli', origin: 'Andhra Pradesh', type: 'Premium Export', desc: 'The pride of Andhra Pradesh, known for its sweet, fiberless pulp and rich aroma.', color: '#FFC107', image: mango1 },
@@ -18,7 +18,7 @@ const mangoes = [
     { id: 4, name: 'Pariya', origin: 'Gujarat/Maharashtra', type: 'Premium Hybrid', desc: 'A premium hybrid of Alphonso and Baneshan, exceptionally sweet and fiberless.', color: '#FFB300', image: mango4 },
     { id: 5, name: 'Kothapalli kobbarantu', origin: 'East Godavari', type: 'Traditional Variety', desc: 'Named for its coconut-like aroma, this variety offers a firm, meaty texture.', color: '#FDD835', image: mango5 },
     { id: 6, name: 'Muntha maamidi', origin: 'Andhra Pradesh', type: 'Popular Domestic', desc: 'A traditional favorite, valued for its classic sweet taste and versatility.', color: '#FBC02D', image: mango6 },
-    { id: 7, name: 'Panukulu', origin: 'Coastal Andhra', type: 'Early Season', desc: 'An early-season delicacy with a sweet, fiber-free meaty texture.', color: '#C0CA33', image: mango7 },
+    { id: 7, name: 'Panukulu (Aplhonso)', origin: 'Coastal Andhra', type: 'Early Season', desc: 'An early-season delicacy with a sweet, fiber-free meaty texture.', color: '#C0CA33', image: mango7 },
     { id: 8, name: 'Cherukurasalu', origin: 'Nuzvid', type: 'Honey Sweet', desc: 'The "Sugarcane" mango, famous for its intense, honey-like sweetness and juiciness.', color: '#4CAF50', image: mango8 },
     { id: 9, name: 'Panchadara kalasa', origin: 'Andhra Pradesh', type: 'Sugar Pot', desc: 'The "Sugar Pot" of mangoes, known for its melting texture and pot-like shape.', color: '#FFA000', image: mango9 },
     { id: 10, name: 'Pedda rasalu', origin: 'South India', type: 'Juicing Specialty', desc: 'Large, juicy mangoes perfect for preparing fresh, aromatic mango pulp.', color: '#FFD600', image: mango10 },

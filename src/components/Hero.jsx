@@ -4,6 +4,9 @@ import heroImage from '../assets/images/hero_mango.jpg';
 const Hero = () => {
     return (
         <section id="home" className="hero">
+            <div className="hero-leaf leaf-1">🍃</div>
+            <div className="hero-leaf leaf-2">🌿</div>
+            <div className="hero-leaf leaf-3">🍃</div>
             <div className="hero-overlay"></div>
             <div className="container hero-container animate-fade">
                 <div className="hero-content">
