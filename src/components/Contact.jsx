@@ -55,8 +55,8 @@ const Contact = () => {
             const whatsappMsg = `Hi Fresh Pick, I'm ${formData.name}.\n\nEnquiry Details:\nEmail: ${formData.email}\nMessage: ${formData.message}`;
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMsg)}`;
 
-            // Open WhatsApp in a new tab
-            window.open(whatsappUrl, '_blank');
+            // Direct redirection is more reliable on mobile than window.open after an async task
+            window.location.href = whatsappUrl;
 
             setStatus({ submitting: false, submitted: true, error: null });
             setFormData({ name: '', email: '', message: '' });
